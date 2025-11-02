@@ -1,0 +1,66 @@
+@use "@/styles/branding/base/helpers" as *;
+@use "sass:map";
+
+$lineSpace: 6px;
+$lineThickness: 3px;
+$lineWidth: 30px;
+
+%line {
+  transition: all ease-in-out 0.3s;
+  width: $lineWidth;
+  height: $lineThickness;
+  background-color: map.get($brandingColors, "theme-two");
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: $lineWidth;
+  height: calc($lineThickness * 3 + $lineSpace * 2);
+}
+
+.line {
+  @extend %line;
+  position: relative;
+}
+
+.line::before,
+.line::after {
+  @extend %line;
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.line::before {
+  top: -$lineSpace;
+}
+
+.line::after {
+  top: $lineSpace;
+}
+
+.lineClosed {
+  @extend %line;
+  position: relative;
+  background-color: transparent;
+}
+
+.lineClosed::before,
+.lineClosed::after {
+  @extend %line;
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.lineClosed::before {
+  transform: rotate(45deg);
+}
+
+.lineClosed::after {
+  transform: rotate(-45deg);
+}

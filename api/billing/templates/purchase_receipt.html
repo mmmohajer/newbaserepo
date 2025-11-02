@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Keeping Google Fonts links as per your request -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @page {
+        size: letter;
+        margin: 4cm 2cm;
+
+        @bottom-center {
+          content: "Page " counter(page) " of " counter(pages);
+          font-family: "Poppins", sans-serif;
+          font-size: 9pt;
+          color: #000;
+          transform: translateY(-5mm);
+        }
+      }
+
+      #header-content {
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 100%;
+        top: -20mm;
+        height: 15mm;
+      }
+
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      .font {
+        font-family: "Poppins", sans-serif;
+        font-size: 9pt;
+        line-height: 1.5;
+      }
+
+      .header-title {
+        font-family: "Poppins", sans-serif;
+        font-size: 12pt;
+        color: #032456;
+        text-align: left;
+        font-weight: bold;
+        text-decoration: underline;
+        margin-bottom: 4.23mm;
+        line-height: 1.5;
+        background-color: aquamarine;
+        padding: 4.23mm;
+      }
+
+      .pageContainer {
+        width: 100%;
+        padding: 0;
+        overflow-x: hidden;
+        font-family: "Poppins", sans-serif;
+        font-size: 9pt;
+        line-height: 1.5;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .title {
+        transform: scale(0.5);
+        transform-origin: 0 0;
+        height: 26.46mm;
+      }
+
+      .boldTitle {
+        font-weight: bold;
+        color: #032456;
+        font-size: 12pt; /* Retained as is */
+      }
+
+      .iswadAddress {
+        line-height: 1.5;
+      }
+
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 7.94mm;
+      }
+
+      .tableHeader {
+        color: white;
+        background: linear-gradient(90deg, #156393 0%, #061e2d 98.8%);
+      }
+
+      .dateCol,
+      .descCol,
+      .amountCol {
+        width: 20%;
+        padding-left: 2.65mm;
+        padding-right: 2.65mm;
+        text-align: left;
+        border: solid 0.53mm #032456;
+      }
+
+      .descCol {
+        width: 60%;
+      }
+
+      .tableRow:nth-child(even) {
+        background-color: #e2ecf6;
+      }
+
+      .tableRow:nth-child(odd) {
+        background-color: #f1f1f1;
+      }
+
+      .tableCell {
+        padding-left: 2.65mm;
+        padding-right: 2.65mm;
+        border: solid 0.53mm #032456;
+      }
+
+      .priceTableContainer {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        width: 100%;
+      }
+
+      .priceTableWrapper {
+        margin-left: 0.53mm;
+        width: 40%;
+      }
+
+      .priceTable {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1.32mm;
+      }
+
+      .priceTableCell {
+        font-weight: bold;
+        width: 50%;
+        padding-left: 2.65mm;
+        padding-right: 2.65mm;
+        background-color: #e2ecf6;
+      }
+
+      .priceTableRow {
+        border-bottom: solid 0.53mm #032456;
+      }
+
+      .footer {
+        position: fixed;
+        height: 15mm;
+        left: 0;
+        right: 0;
+        bottom: -20mm;
+        text-align: center;
+        background: linear-gradient(
+          180deg,
+          rgba(226, 236, 246, 0.3) 4.59%,
+          rgba(21, 99, 147, 0.3) 104.06%
+        );
+        font-family: "Poppins", sans-serif;
+        font-size: 10pt;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-content">
+      <div
+        class="header-table"
+        style="
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div style="display: flex; align-items: center; height: 15mm">
+          <span class="header-title">Purchase Receipt</span>
+        </div>
+        <div style="display: flex; align-items: center; height: 15mm">
+          <img
+            src="https://techtipsbymoh.tor1.cdn.digitaloceanspaces.com/media/general/new-tech-tips-logo.png"
+            alt="Logo"
+            style="width: 20mm; height: auto"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="pageContainer">
+      <div>
+        <div style="display: flex; width: 100%; justify-content: space-between">
+          <div class="iswadInfoContainer">
+            <div class="boldTitle">Company Information</div>
+            <div style="font-weight: bold">ISWAD Inc.</div>
+            <div class="iswadAddress">
+              <div>719 Yellowstone Crt</div>
+              <div>Ottawa, ON, CA</div>
+              <div>K2J 5S4</div>
+            </div>
+          </div>
+          <div
+            class="iswadInfoContainer"
+            style="padding: 0 4mm; max-width: 50%"
+          >
+            <div class="boldTitle">Customer Information</div>
+            <div style="font-weight: bold">{{CLIENT_NAME}}</div>
+            <div class="iswadAddress">
+              <div>{{CLIENT_STREET_ADDRESS}}</div>
+              <div>{{CLIENT_CITY}} {{CLIENT_PROVINCE}}, {{CLIENT_COUNTRY}}</div>
+              <div>{{CLIENT_POSTAL_CODE}}</div>
+            </div>
+          </div>
+          <div class="header-receipt-number">
+            <div class="font">Receipt No: {{RECEIPT_NUMBER}}</div>
+            <div class="font">Date: {{TRANSACTION_DATE}}</div>
+            <div class="font">GST/HST No: 795324300</div>
+          </div>
+        </div>
+        <table class="table">
+          <tr class="tableHeader">
+            <th class="dateCol">Date</th>
+            <th class="descCol">Description</th>
+            <th class="amountCol">Amount</th>
+          </tr>
+          {% for item in ITEMS %}
+          <tr class="tableRow">
+            <td class="tableCell">{{ item.date }}</td>
+            <td class="tableCell">{{ item.description }}</td>
+            <td class="tableCell">{{ item.amount }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        <div class="priceTableContainer">
+          <div class="priceTableWrapper">
+            <table class="priceTable">
+              <tr class="priceTableRow">
+                <td class="priceTableCell">Subtotal</td>
+                <td class="priceTableCell">{{SUBTOTAL}}</td>
+              </tr>
+              <tr class="priceTableRow">
+                <td class="priceTableCell">GST/HST</td>
+                <td class="priceTableCell">{{TAX_AMOUNT}}</td>
+              </tr>
+              <tr class="priceTableRow">
+                <td class="priceTableCell">Total</td>
+                <td class="priceTableCell">{{TOTAL}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div style="margin: 4.23mm 0">
+          <div class="boldTitle">Refund Policy:</div>
+          <div>
+            Please review our refund policy at
+            <a href="https://iswad.tech/privacy-policy" target="_blank"
+              >https://iswad.tech/privacy-policy</a
+            >.
+          </div>
+        </div>
+        <div style="margin-bottom: 4.23mm">
+          <div class="boldTitle">Customer Support:</div>
+          <div>
+            Please Contact Us at
+            <a href="mailto:info@iswad.iswad">info@iswad.iswad</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer" style="padding: 2mm">
+      Thank you for your purchase! We're excited to help you grow.
+    </footer>
+  </body>
+</html>

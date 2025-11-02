@@ -1,0 +1,8 @@
+from billing.serializers import user_billing, customer, product
+
+UserBillingSerializer = user_billing.UserBillingSerializer
+
+StripeCustomerPaymentMethodSerializer = customer.StripeCustomerPaymentMethodSerializer
+CustomerTransactionSerializer = customer.CustomerTransactionSerializer
+
+ProductSerializer = product.ProductSerializer

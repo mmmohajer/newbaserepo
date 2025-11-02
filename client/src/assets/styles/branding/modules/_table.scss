@@ -1,0 +1,55 @@
+@use "sass:math";
+@use "../base/helpers" as *;
+
+.blog-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+  // width: 600px;
+}
+
+.blog-table th,
+.blog-table td {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+// .blog-table th {
+//   background-color: #525e38;
+//   font-weight: bold;
+// }
+
+// .blog-table tbody tr:nth-child(even) {
+//   background-color: #525e38;
+// }
+
+.blog-table tbody tr:hover {
+  background-color: #919191;
+  cursor: pointer;
+}
+
+/* Make table responsive */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include atMedium {
+    width: 700px;
+  }
+
+  @include atLarge {
+    width: 900px;
+  }
+}
+
+/* Prevent table from exceeding container */
+.blog-table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+}

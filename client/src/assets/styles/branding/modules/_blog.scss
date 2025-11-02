@@ -1,0 +1,169 @@
+@use "sass:math";
+@use "../base/helpers" as *;
+
+%blogdetailheading {
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+
+.blog-detail-page {
+  h1 {
+    @extend %blogdetailheading;
+    font-size: 28px;
+  }
+
+  h2 {
+    @extend %blogdetailheading;
+    font-size: 24px;
+  }
+
+  h3 {
+    @extend %blogdetailheading;
+    font-size: 20px;
+  }
+
+  h4 {
+    @extend %blogdetailheading;
+    font-size: 18px;
+  }
+
+  h5 {
+    @extend %blogdetailheading;
+    font-size: 16px;
+  }
+
+  h6 {
+    @extend %blogdetailheading;
+    font-size: 16px;
+  }
+
+  p {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+
+.blog-detail-page {
+  ol {
+    list-style-type: none; /* Remove default list numbers */
+    counter-reset: list-counter; /* Reset custom counter */
+    margin: 20px 0;
+    padding-left: 0;
+  }
+
+  ol li {
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    border-left: 2px solid #333333;
+  }
+
+  ol li::before {
+    content: counter(list-counter);
+    counter-increment: list-counter;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(-50%);
+    background-color: #333333; /* Replace with theme color if needed */
+    color: white;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul li {
+    position: relative;
+    margin: 5px 0;
+    padding: 5px 25px; /* Added padding to create space inside the rectangle */
+    // background-color: #e2ecf6; /* theme-three for background */
+  }
+
+  /* Adding a colored "dot" for each list item with a margin */
+  ul li::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 15px;
+    // transform: translateY(-100%);
+    margin-right: 15px; /* Margin between dot and text */
+    width: 12px;
+    height: 12px;
+    background-color: #333333; /* theme-one */
+    border-radius: 50%;
+  }
+
+  /* Alternating dot colors for a visually appealing look */
+  // ul li:nth-child(2n)::before {
+  //   background-color: #395d41; /* theme-two */
+  // }
+
+  // ul li:nth-child(3n)::before {
+  //   background-color: #395d41; /* theme-five */
+  // }
+
+  // ul li:nth-child(4n)::before {
+  //   background-color: #395d41; /* theme-four */
+  // }
+
+  // ul li:nth-child(5n)::before {
+  //   background-color: #395d41; /* theme-six */
+  // }
+}
+
+.blog-detail-page {
+  a {
+    color: rgb(39, 184, 39) !important;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+}
+
+// .blog-detail-page {
+//   p,
+//   h1,
+//   h2,
+//   h3,
+//   h4,
+//   h5,
+//   h6,
+//   li,
+//   td,
+//   th,
+//   div,
+//   span,
+//   blockquote {
+//     word-break: break-word;
+//     overflow-wrap: break-word;
+//     white-space: normal;
+//   }
+
+//   table {
+//     width: 100%;
+//     overflow-x: auto;
+//     display: block;
+//     word-break: break-word;
+//     white-space: normal;
+//   }
+
+//   pre,
+//   code {
+//     white-space: pre-wrap !important;
+//     word-break: break-word !important;
+//     overflow-wrap: break-word !important;
+//   }
+// }

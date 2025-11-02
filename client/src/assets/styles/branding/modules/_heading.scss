@@ -1,0 +1,27 @@
+@use "sass:map";
+@use "../base/helpers" as *;
+
+@each $header in (1, 2, 3, 4, 5, 6) {
+  h#{$header} {
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+
+    font-size: map.get($brandingHeadingFontSizes, "h#{$header}-xs");
+
+    @include atSmall {
+      font-size: map.get($brandingHeadingFontSizes, "h#{$header}-sm");
+    }
+
+    @include atMedium {
+      font-size: map.get($brandingHeadingFontSizes, "h#{$header}-md");
+    }
+
+    @include atLarge {
+      font-size: map.get($brandingHeadingFontSizes, "h#{$header}-lg");
+    }
+  }
+}
+
+h1 {
+  line-height: 3.5rem;
+}

@@ -1,0 +1,8 @@
+@use "sass:math";
+@use "../base/helpers.scss" as *;
+
+@each $gap in $gaps {
+  .gap-#{$gap} {
+    gap: #{$gap}px;
+  }
+}

@@ -1,0 +1,9 @@
+@use "@/styles/branding/base/helpers" as *;
+
+.container {
+  height: calc(100vh - 300px);
+
+  @include atMedium {
+    height: calc(100vh - 240px);
+  }
+}

@@ -1,0 +1,25 @@
+/* Base class — ensures content is visible for SEO and accessible tools */
+.anim {
+  opacity: 1;
+  transform: translateX(0);
+  will-change: transform;
+}
+
+/* Animation is only triggered when this class is added */
+@media (prefers-reduced-motion: no-preference) {
+  .animIsActive {
+    animation: fadeInRight 1.2s ease-out forwards;
+  }
+}
+
+/* Keyframes for the scroll-in animation */
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

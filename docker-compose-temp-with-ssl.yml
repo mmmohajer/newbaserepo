@@ -1,0 +1,21 @@
+services:
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile.temp_with_ssl
+      context: ./nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/certbot/conf:/etc/letsencrypt
+      - ./nginx/certbot/www:/var/www/certbot
+      - ./client_temporary:/etc/site
+
+  certbot:
+    image: certbot/dns-cloudflare
+    volumes:
+      - ./nginx/certbot/conf:/etc/letsencrypt
+      - ./nginx/certbot/www:/var/www/certbot
+      - ./secrets/secret_files/cloudflare.ini:/cloudflare/cloudflare.ini:ro
+    entrypoint: /bin/sh -c 'trap exit TERM; while :; do sleep 12h; certbot renew --dns-cloudflare --dns-cloudflare-credentials /cloudflare/cloudflare.ini --config-dir /etc/letsencrypt --work-dir /tmp --logs-dir /tmp --quiet; done'
