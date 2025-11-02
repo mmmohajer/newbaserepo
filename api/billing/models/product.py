@@ -5,8 +5,7 @@ from core.models.base_model import TimeStampedUUIDModel
 
 class Product(TimeStampedUUIDModel):
     CATEGORIES_CHOICES = [
-        ('personalized_mentorship', 'Personalized Mentorship'),
-        ('course_access', 'Course Access'),
+        ('product_category_1', 'Product Category 1'),
     ]
 
     name = models.CharField(max_length=255)

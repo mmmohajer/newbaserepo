@@ -13,11 +13,6 @@ FILE_TYPES = [
 ]
 
 POST_TYPES = [
-    ('BLOG', 'BLOG'),
-    ('TIP', 'TIP'),
-    ('PROJECT', 'PROJECT'),
-    ('COURSE', 'COURSE'),
-    ('TESTIMONIAL', 'TESTIMONIAL'),
     ('GENERAL', 'GENERAL')
 ]
 
