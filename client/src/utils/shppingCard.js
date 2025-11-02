@@ -13,7 +13,7 @@ import { PAGE_ROUTES } from "@/constants/pageRoutes";
 
 const SHOPPING_CART_KEY = "shopping_cart";
 
-export const addToCart = (dispatch, router, item, productType = "course") => {
+export const addToCart = (dispatch, router, item, productType = "") => {
   dispatch(addToCartAction({ ...item, productType }));
   const cart = getLocalStorage(SHOPPING_CART_KEY) || [];
   cart.push({ ...item, productType });

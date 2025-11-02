@@ -86,7 +86,6 @@ const ShowItems = () => {
                 >
                   <Card
                     cardType="shopping-item"
-                    courseItem={item}
                     productType={item?.productType}
                   />
                 </Div>
