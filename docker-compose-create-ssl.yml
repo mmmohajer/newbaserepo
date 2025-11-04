@@ -13,9 +13,8 @@ services:
       - ./client_temporary:/etc/site
 
   certbot:
-    image: certbot/dns-cloudflare
+    image: certbot/certbot
     volumes:
       - ./nginx/certbot/conf:/etc/letsencrypt
       - ./nginx/certbot/www:/var/www/certbot
-      - ./secrets/secret_files/cloudflare.ini:/cloudflare/cloudflare.ini:ro
-    entrypoint: /bin/sh -c 'trap exit TERM; while :; do sleep 12h; certbot renew --dns-cloudflare --dns-cloudflare-credentials /cloudflare/cloudflare.ini --config-dir /etc/letsencrypt --work-dir /tmp --logs-dir /tmp --quiet; done'
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
